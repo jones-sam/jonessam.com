@@ -1,24 +1,24 @@
 import Head from "next/head"
 import styles from "../styles/Home.module.css"
+import React from "react"
 
-export default function Home() {
+const index: React.FC = ({}) => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Sam Jones</title>
+        <title>Sam Jones | Web Developer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <h1>jonessam.com</h1>
+        <h1>Sam Jones</h1>
+        <h3>Web Developer</h3>
         <a style={{ color: "#0070f3" }} href="mailto:samjones6058@gmail.com">
           Email me
         </a>
       </main>
-
-      <footer className={styles.footer}>
-        <p>Copyright Sam Jones {new Date(Date.now()).getFullYear()}</p>
-      </footer>
     </div>
   )
 }
+
+export default index
