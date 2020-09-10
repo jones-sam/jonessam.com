@@ -1,6 +1,9 @@
 import "../styles/globals.css"
 import { ThemeProvider, CSSReset } from "@chakra-ui/core"
 
+import ReactGA from "react-ga"
+ReactGA.initialize("UA-177643546-1")
+
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider>

@@ -16,7 +16,6 @@ import {
 } from "react-icons/si"
 import { BsFileText } from "react-icons/bs"
 import { Button, Flex, Tooltip, Box } from "@chakra-ui/core"
-import Link from "next/link"
 import { Icon } from "../components/Icon"
 
 const index: React.FC = ({}) => {
