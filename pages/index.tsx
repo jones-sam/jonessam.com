@@ -62,21 +62,21 @@ const index: React.FC = ({}) => {
           </Icon>
         </div>
         <Flex wrap="wrap" justifyContent="center">
-          <a href="mailto:sam@jonessam.com" target="_blank">
-            <Button m={2} leftIcon="email">
+          <Button m={2} leftIcon="email">
+            <a href="mailto:sam@jonessam.com" target="_blank">
               Email me
-            </Button>
-          </a>
-          <a href="https://github.com/jones-sam" target="_blank">
-            <Button m={2} leftIcon={SiGithub}>
+            </a>
+          </Button>
+          <Button m={2} leftIcon={SiGithub}>
+            <a href="https://github.com/jones-sam" target="_blank">
               Github
-            </Button>
-          </a>
-          <a href="/SamJonesResume.pdf" download target="_blank">
-            <Button m={2} leftIcon={BsFileText}>
+            </a>
+          </Button>
+          <Button m={2} leftIcon={BsFileText}>
+            <a href="/SamJonesResume.pdf" download>
               Download CV
-            </Button>
-          </a>
+            </a>
+          </Button>
         </Flex>
       </div>
     </div>
