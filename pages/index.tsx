@@ -72,8 +72,8 @@ const index: React.FC = ({}) => {
               Github
             </Button>
           </a>
-          <a href="" target="_blank">
-            <Button m={2} isDisabled leftIcon={BsFileText}>
+          <a href="/SamJonesResume.pdf" download target="_blank">
+            <Button m={2} leftIcon={BsFileText}>
               Download CV
             </Button>
           </a>
