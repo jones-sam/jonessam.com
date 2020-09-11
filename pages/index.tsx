@@ -1,6 +1,6 @@
 import Head from "next/head"
 import styles from "../styles/Home.module.css"
-import React from "react"
+import React, { useEffect } from "react"
 import {
   SiTypescript,
   SiJavascript,
@@ -15,10 +15,15 @@ import {
   SiGithub,
 } from "react-icons/si"
 import { BsFileText } from "react-icons/bs"
-import { Button, Flex, Tooltip, Box } from "@chakra-ui/core"
+import { Button, Flex } from "@chakra-ui/core"
 import { Icon } from "../components/Icon"
+import ReactGA from "react-ga"
 
 const index: React.FC = ({}) => {
+  useEffect(() => {
+    ReactGA.pageview("index")
+  }, [])
+
   return (
     <div className={styles.container}>
       <Head>
