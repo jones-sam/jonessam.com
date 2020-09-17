@@ -19,19 +19,14 @@ import { Box, Button, Flex } from "@chakra-ui/core"
 import { Icon } from "../components/Icon"
 import ReactGA from "react-ga"
 import Draggable from "react-draggable"
-import {
-  BrowserView,
-  MobileView,
-  isBrowser,
-  isMobile,
-} from "react-device-detect"
+import { isMobile } from "react-device-detect"
 
 const index: React.FC = ({}) => {
   useEffect(() => {
     ReactGA.pageview("index")
   }, [])
 
-  const startingNumOfCards = isBrowser ? 5 : 1
+  const startingNumOfCards = !isMobile ? 5 : 1
   const [numOfCards, setNumOfCards] = useState(startingNumOfCards)
 
   return (
@@ -47,7 +42,7 @@ const index: React.FC = ({}) => {
           key={i}
           bounds="parent"
           defaultPosition={
-            i < startingNumOfCards
+            i < startingNumOfCards && !isMobile
               ? { x: -(i - 3) * 4, y: (i - 3) * 4 }
               : { x: 0, y: 0 }
           }
