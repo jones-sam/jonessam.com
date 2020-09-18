@@ -19,6 +19,20 @@ import {
   SiTypescript,
 } from "react-icons/si"
 import NoSSR from "react-no-ssr"
+import {
+  EmailIcon,
+  EmailShareButton,
+  FacebookIcon,
+  FacebookShareButton,
+  LinkedinIcon,
+  LinkedinShareButton,
+  TelegramIcon,
+  TelegramShareButton,
+  TwitterIcon,
+  TwitterShareButton,
+  WhatsappIcon,
+  WhatsappShareButton,
+} from "react-share"
 import { Icon } from "../components/Icon"
 import styles from "../styles/Home.module.css"
 
@@ -42,6 +56,33 @@ const index: React.FC = ({}) => {
           zIndex={100000}
         >
           <Text fontSize="3xl">{`Business Cards Taken: ${cardsTaken}`}</Text>
+          <>
+            <Text fontSize="lg">Know someone who could use my card?</Text>
+            <Flex justify="space-between" width="80%">
+              <EmailShareButton
+                subject="Check out jonessam.com!"
+                body="Sam Jones is a Web developer, and this is his personal site."
+                url="https://jonessam.com"
+              >
+                <EmailIcon round size={32} />
+              </EmailShareButton>
+              <FacebookShareButton url="https://jonessam.com">
+                <FacebookIcon round size={32} />
+              </FacebookShareButton>
+              <LinkedinShareButton url="https://jonessam.com">
+                <LinkedinIcon round size={32} />
+              </LinkedinShareButton>
+              <TwitterShareButton url="https://jonessam.com">
+                <TwitterIcon round size={32} />
+              </TwitterShareButton>
+              <TelegramShareButton url="https://jonessam.com">
+                <TelegramIcon round size={32} />
+              </TelegramShareButton>
+              <WhatsappShareButton url="https://jonessam.com">
+                <WhatsappIcon round size={32} />
+              </WhatsappShareButton>
+            </Flex>
+          </>
         </Box>
       )}
       <div className={styles.container}>
