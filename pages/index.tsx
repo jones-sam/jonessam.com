@@ -47,6 +47,18 @@ const index: React.FC = ({}) => {
 
   return (
     <>
+      <Head>
+        <title>Sam Jones | Web Developer</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="description"
+          content="Sam Jones is a Web Developer from Canada. His skills include TypeScript, React, Node, Ruby on Rails, and more."
+        />
+        <meta
+          name="keywords"
+          content="Sam, Jones, Web, Developer, TypeScript, React, Native, Node, Ruby, Ruby on Rails, HTML, CSS, Programmer, Canada, Software"
+        />
+      </Head>
       {cardsTaken > startingNumOfCards && (
         <Box
           position="absolute"
@@ -86,11 +98,6 @@ const index: React.FC = ({}) => {
         </Box>
       )}
       <div className={styles.container}>
-        <Head>
-          <title>Sam Jones | Web Developer</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-
         <NoSSR>
           {[...Array(numOfCards)].map((e, i) => (
             <Draggable
