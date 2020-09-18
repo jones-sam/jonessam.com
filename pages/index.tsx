@@ -58,7 +58,7 @@ const index: React.FC = ({}) => {
           <Text fontSize="3xl">{`Business Cards Taken: ${cardsTaken}`}</Text>
           <>
             <Text fontSize="lg">Know someone who could use my card?</Text>
-            <Flex justify="space-between" width="80%">
+            <Flex mt={1} justify="space-between" width="80%">
               <EmailShareButton
                 subject="Check out jonessam.com!"
                 body="Sam Jones is a Web developer, and this is his personal site."
@@ -97,7 +97,6 @@ const index: React.FC = ({}) => {
               disabled={isMobile}
               key={i}
               bounds="parent"
-              scale={1.3}
               defaultPosition={
                 i < startingNumOfCards && !isMobile
                   ? { x: -(i - 3) * 4, y: (i - 3) * 4 }
