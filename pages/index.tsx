@@ -1,10 +1,11 @@
-import { Box, Button, Flex, Text } from "@chakra-ui/core"
-import Head from "next/head"
-import React, { useEffect, useState } from "react"
-import { isMobile } from "react-device-detect"
-import Draggable from "react-draggable"
-import ReactGA from "react-ga"
-import { BsFileText } from "react-icons/bs"
+import { Box, Button, Flex, Text } from "@chakra-ui/core";
+import Head from "next/head";
+import React, { useEffect, useState } from "react";
+import { isMobile } from "react-device-detect";
+import Draggable from "react-draggable";
+import ReactGA from "react-ga";
+import { BsFileText } from "react-icons/bs";
+import { AiFillLinkedin, AiOutlineLinkedin } from "react-icons/ai";
 import {
   SiCss3,
   SiFirebase,
@@ -17,8 +18,8 @@ import {
   SiReact,
   SiRuby,
   SiTypescript,
-} from "react-icons/si"
-import NoSSR from "react-no-ssr"
+} from "react-icons/si";
+import NoSSR from "react-no-ssr";
 import {
   EmailIcon,
   EmailShareButton,
@@ -32,18 +33,18 @@ import {
   TwitterShareButton,
   WhatsappIcon,
   WhatsappShareButton,
-} from "react-share"
-import { Icon } from "../components/Icon"
-import styles from "../styles/Home.module.css"
+} from "react-share";
+import { Icon } from "../components/Icon";
+import styles from "../styles/Home.module.css";
 
 const index: React.FC = ({}) => {
   useEffect(() => {
-    ReactGA.pageview("index")
-  }, [])
+    ReactGA.pageview("index");
+  }, []);
 
-  const startingNumOfCards = !isMobile ? 5 : 1
-  const [numOfCards, setNumOfCards] = useState(startingNumOfCards)
-  const [cardsTaken, setCardsTaken] = useState(startingNumOfCards - 1)
+  const startingNumOfCards = !isMobile ? 5 : 1;
+  const [numOfCards, setNumOfCards] = useState(startingNumOfCards);
+  const [cardsTaken, setCardsTaken] = useState(startingNumOfCards - 1);
 
   return (
     <>
@@ -99,7 +100,7 @@ const index: React.FC = ({}) => {
       )}
       <div className={styles.container}>
         <NoSSR>
-          {[...Array(numOfCards)].map((e, i) => (
+          {[...Array(numOfCards)].map((_, i) => (
             <Draggable
               disabled={isMobile}
               key={i}
@@ -111,8 +112,8 @@ const index: React.FC = ({}) => {
               }
               onStart={() => {
                 if (i + 1 === numOfCards) {
-                  setCardsTaken(cardsTaken + 1)
-                  setNumOfCards(numOfCards + 1)
+                  setCardsTaken(cardsTaken + 1);
+                  setNumOfCards(numOfCards + 1);
                 }
               }}
             >
@@ -162,9 +163,9 @@ const index: React.FC = ({}) => {
                       Github
                     </a>
                   </Button>
-                  <Button m={2} leftIcon={BsFileText}>
-                    <a href="/SamJonesResume.pdf" download>
-                      Download CV
+                  <Button m={2} leftIcon={AiFillLinkedin}>
+                    <a href="https://www.linkedin.com/in/sam-jones-b88b17192/">
+                      LinkedIn
                     </a>
                   </Button>
                 </Flex>
@@ -174,7 +175,7 @@ const index: React.FC = ({}) => {
         </NoSSR>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default index
+export default index;
