@@ -16,8 +16,9 @@ import {
   SiPostgresql,
   SiRails,
   SiReact,
-  SiRuby,
   SiTypescript,
+  SiFlutter,
+  SiGraphql,
 } from "react-icons/si";
 import NoSSR from "react-no-ssr";
 import {
@@ -49,11 +50,11 @@ const index: React.FC = ({}) => {
   return (
     <>
       <Head>
-        <title>Sam Jones | Web Developer</title>
+        <title>Sam Jones | Full-Stack Developer</title>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Sam Jones is a Web Developer from Canada. His skills include TypeScript, React, Node, Ruby on Rails, and more."
+          content="Sam Jones is a Full-Stack Developer from Canada. His skills include TypeScript, React, Node, Ruby on Rails, and more."
         />
         <meta
           name="keywords"
@@ -119,7 +120,7 @@ const index: React.FC = ({}) => {
             >
               <Box zIndex={10000 - i} cursor="grab" className={styles.card}>
                 <h1>Sam Jones</h1>
-                <h4>Web Developer</h4>
+                <h4>Full-Stack Developer</h4>
                 <div className={styles.skills}>
                   <Icon label="TypeScript">
                     <SiTypescript />
@@ -139,9 +140,6 @@ const index: React.FC = ({}) => {
                   <Icon label="Firebase">
                     <SiFirebase />
                   </Icon>
-                  <Icon label="Ruby">
-                    <SiRuby />
-                  </Icon>
                   <Icon label="Ruby on Rails">
                     <SiRails />
                   </Icon>
@@ -151,10 +149,16 @@ const index: React.FC = ({}) => {
                   <Icon label="PostgreSQL">
                     <SiPostgresql />
                   </Icon>
+                  <Icon label="Flutter">
+                    <SiFlutter />
+                  </Icon>
+                  <Icon label="GraphQL">
+                    <SiGraphql />
+                  </Icon>
                 </div>
                 <Flex wrap="wrap" justifyContent="center">
                   <Button m={2} leftIcon="email">
-                    <a href="mailto:sam@jonessam.com" target="_blank">
+                    <a href="mailto:contact@jonessam.com" target="_blank">
                       Email me
                     </a>
                   </Button>
