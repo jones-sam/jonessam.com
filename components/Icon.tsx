@@ -1,8 +1,8 @@
-import React from "react"
-import { Tooltip, Box } from "@chakra-ui/core"
+import React from "react";
+import { Tooltip, Box } from "@chakra-ui/core";
 
 interface IconProps {
-  label: string
+  label: string;
 }
 
 export const Icon: React.FC<IconProps> = ({ label, children }) => {
@@ -15,5 +15,5 @@ export const Icon: React.FC<IconProps> = ({ label, children }) => {
     >
       <Box m={1}>{children}</Box>
     </Tooltip>
-  )
-}
+  );
+};
