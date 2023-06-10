@@ -50,7 +50,7 @@ const index: React.FC = ({}) => {
   const [showAlex, setShowAlex] = useState(false);
 
   const handler = (e: KeyboardEvent) => {
-    if (e.key === "a" && e.ctrlKey) {
+    if (e.key === "|" && e.ctrlKey) {
       console.log("here");
       setShowAlex(!showAlex);
     }
