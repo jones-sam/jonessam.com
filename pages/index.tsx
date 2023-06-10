@@ -4,8 +4,7 @@ import React, { useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
 import Draggable from "react-draggable";
 import ReactGA from "react-ga";
-import { BsFileText } from "react-icons/bs";
-import { AiFillLinkedin, AiOutlineLinkedin } from "react-icons/ai";
+import { AiFillLinkedin } from "react-icons/ai";
 import {
   SiCss3,
   SiFirebase,
@@ -37,6 +36,7 @@ import {
 } from "react-share";
 import { Icon } from "../components/Icon";
 import styles from "../styles/Home.module.css";
+import Image from "next/image";
 
 const index: React.FC = ({}) => {
   useEffect(() => {
@@ -46,6 +46,21 @@ const index: React.FC = ({}) => {
   const startingNumOfCards = !isMobile ? 5 : 1;
   const [numOfCards, setNumOfCards] = useState(startingNumOfCards);
   const [cardsTaken, setCardsTaken] = useState(startingNumOfCards - 1);
+
+  const [showAlex, setShowAlex] = useState(false);
+
+  const handler = (e: KeyboardEvent) => {
+    if (e.key === "a" && e.ctrlKey) {
+      console.log("here");
+      setShowAlex(!showAlex);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("keydown", handler, false);
+
+    return () => window.removeEventListener("keydown", handler, false);
+  }, [showAlex]);
 
   return (
     <>
@@ -122,6 +137,14 @@ const index: React.FC = ({}) => {
                 <h1>Sam Jones</h1>
                 <h4>Full-Stack Developer</h4>
                 <div className={styles.skills}>
+                  {showAlex && (
+                    <Image
+                      src="/fatlex.jpg"
+                      alt="Alex"
+                      width={200}
+                      height={200}
+                    />
+                  )}
                   <Icon label="TypeScript">
                     <SiTypescript />
                   </Icon>
@@ -155,6 +178,14 @@ const index: React.FC = ({}) => {
                   <Icon label="GraphQL">
                     <SiGraphql />
                   </Icon>
+                  {showAlex && (
+                    <Image
+                      src="/fatlex.jpg"
+                      alt="Alex"
+                      width={200}
+                      height={200}
+                    />
+                  )}
                 </div>
                 <Flex wrap="wrap" justifyContent="center">
                   <Button m={2} leftIcon="email">
